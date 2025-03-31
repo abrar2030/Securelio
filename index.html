@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrar Ahmed - Professional Portfolio</title>
+    <style>
+        .footer-link {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1f2937;
+        }
+        
+        .footer-bottom p {
+            color: #9ca3af;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .footer-links.certifications li {
+            white-space: nowrap;
+            overflow: visible;
+            text-overflow: clip;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .footer-links li {
+            list-style-type: none;
+            margin-bottom: 8px;
+            color: #9ca3af;
+            font-size: 16px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #4b5563;
+        }
+        
+        .footer-heading {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #e0e7ff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-icon i {
+            font-size: 2.5rem;
+            color: #3730a3;
+        }
+
+        .skill-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #2563eb;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #1e40af;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #111;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            color: #333;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover:after, 
+        nav a.active:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 24px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background-color: #f0f4f8;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #111;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        /* Download Button Styles */
+        .download-button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-button:hover {
+            background-color: #1e40af;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: #111;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .portfolio-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .portfolio-image {
+            height: 240px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-content {
+            padding: 25px;
+        }
+        
+        .portfolio-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .portfolio-category {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        
+        .portfolio-description {
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        
+        .view-project {
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .view-project::after {
+            content: "→";
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .view-project:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .certification-item {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .certification-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .certification-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .certification-date {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .certification-link {
+            display: inline-flex;
+            align-items: center;
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .certification-link::after {
+            content: "→";
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .certification-link:hover::after {
+            transform: translateX(5px);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: #f0f4f8;
+        }
+        
+        .contact-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #4b5563;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e0e7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #3730a3;
+        }
+        
+        .contact-details a {
+            display: block;
+            color: #2563eb;
+            font-weight: 500;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: #e0e7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #c7d2fe;
+        }
+        
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            fill: #3730a3;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #4b5563;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button[type="submit"] {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #1e40af;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #e5e7eb;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-description {
+            margin-bottom: 20px;
+            color: #9ca3af;
+        }
+        
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #1f2937;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .certifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav li {
+                margin: 10px 20px;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Abrar Ahmed</a>
+                <button class="hamburger">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hello, I'm <span style="color: #2563eb;">Abrar Ahmed</span></h1>
+                <p>Software Developer | Computer Science Graduate</p>
+                <div style="display: flex; gap: 20px; margin-top: 30px; justify-content: center;">
+                    <a href="#contact" class="download-button">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p>Welcome to my portfolio! I'm a passionate Software Developer with experience in cloud computing, DevOps, and software development. My approach combines technical expertise with best practices to deliver scalable and efficient solutions.</p>
+                    <p>I have worked with companies like Ericsson and contributed to academic institutions as a teaching assistant, helping students grasp complex concepts in programming and systems design. My work is driven by a commitment to innovation and attention to detail.</p>
+                    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px;">My Skills</h3>
+
+                <div class="skills">
+                    <!-- Programming Languages -->
+                    <div class="skill-icon" title="Java">
+                        <i class="devicon-java-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="Python">
+                        <i class="devicon-python-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="C#">
+                        <i class="devicon-csharp-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="JavaScript">
+                        <i class="devicon-javascript-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="TypeScript">
+                        <i class="devicon-typescript-plain colored"></i>
+                    </div>
+                
+                    <!-- Frontend Frameworks -->
+                    <div class="skill-icon" title="Angular">
+                        <i class="devicon-angularjs-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="React">
+                        <i class="devicon-react-original colored"></i>
+                    </div>
+                
+                    <!-- Backend & Databases -->
+                    <div class="skill-icon" title=".NET">
+                        <i class="devicon-dot-net-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="Oracle">
+                        <i class="devicon-oracle-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="MySQL">
+                        <i class="devicon-mysql-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="PostgreSQL">
+                        <i class="devicon-postgresql-plain colored"></i>
+                    </div>
+                
+                    <!-- Cloud Providers -->
+                    <div class="skill-icon" title="AWS">
+                        <i class="devicon-amazonwebservices-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="GCP">
+                        <i class="devicon-googlecloud-plain colored"></i>
+                    </div>
+                
+                    <!-- Infrastructure Tools -->
+                    <div class="skill-icon" title="Terraform">
+                        <i class="devicon-terraform-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="Ansible">
+                        <i class="devicon-ansible-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="Docker">
+                        <i class="devicon-docker-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="Kubernetes">
+                        <i class="devicon-kubernetes-plain colored"></i>
+                    </div>
+                
+                    <!-- CI/CD -->
+                    <div class="skill-icon" title="Jenkins">
+                        <i class="devicon-jenkins-plain colored"></i>
+                    </div>
+                    <div class="skill-icon" title="GitHub Actions">
+                        <i class="devicon-github-original colored"></i>
+                    </div>
+                
+                    <!-- Version Control -->
+                    <div class="skill-icon" title="Git">
+                        <i class="devicon-git-plain colored"></i>
+                    </div>
+                </div>
+                </div>
+                
+            <!-- Updated Image Container -->
+            <div class="about-image" style="max-width: 400px;">
+                <img src="image.png" alt="Abrar Ahmed" style="width: 100%; height: auto; border-radius: 8px;">
+            </div>
+        </div>
+    </section>
+
+<!-- Portfolio Section -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="portfolio-heading">
+            <h2 class="section-title">My Portfolio</h2>
+            <p>Here are some of my recent projects and work.</p>
+        </div>
+        <div class="portfolio-grid">
+            <!-- PayNext Project -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="paynext.bmp" alt="PayNext Payment System">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">PayNext</h3>
+                    <div class="portfolio-category">FinTech Payment Processing</div>
+                    <p class="portfolio-description">Developed a scalable payment processing application using microservices architecture, containerization, and automated CI/CD pipelines.</p>
+                    <a href="https://github.com/abrar2030/PayNext" class="view-project">View Project</a>
+                </div>
+            </div>
+
+            <!-- FinovaBank Project -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="finovabank.jpg" alt="FinovaBank Platform">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">FinovaBank</h3>
+                    <div class="portfolio-category">Digital Banking Platform</div>
+                    <p class="portfolio-description">Built a secure banking platform with responsive frontend, efficient data handling, and real-time monitoring.</p>
+                    <a href="https://github.com/abrar2030/FinovaBank" class="view-project">View Project</a>
+                </div>
+            </div>
+
+            <!-- CodeCinema -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="codecinema.webp" alt="CodeCinema">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">CodeCinema</h3>
+                    <div class="portfolio-category">Entertainment Application</div>
+                    <p class="portfolio-description">A feature-rich movie application that allows users to explore, search, and stream movies seamlessly using modern web technologies and API integration.</p>
+                    <a href="https://github.com/abrar2030/CodeCinema" class="view-project">View Project</a>
+                </div>
+            </div>
+
+            <!-- Readify -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="readify.jpg" alt="Readify Platform">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Readify</h3>
+                    <div class="portfolio-category">E-Learning Platform</div>
+                    <p class="portfolio-description">Comprehensive e-learning platform developed with .NET Core and Angular for modern education solutions.</p>
+                    <a href="https://github.com/abrar2030/Readify" class="view-project">View Project</a>
+                </div>
+            </div>
+
+            <!-- City Builder Game -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="city-builder-game.jpg" alt="City Builder Game">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">City Builder Game</h3>
+                    <div class="portfolio-category">Game Development</div>
+                    <p class="portfolio-description">A city-building simulation game where players can design and manage their own virtual cities.</p>
+                    <a href="https://github.com/abrar2030/City-Builder-Game" class="view-project">View Project</a>
+                </div>
+            </div>
+
+            <!-- Buildcon Website -->
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="buildcon-website.jpg" alt="Buildcon Construction Website">
+                </div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Buildcon</h3>
+                    <div class="portfolio-category">Construction Website</div>
+                    <p class="portfolio-description">A professional website for a construction company showcasing their services, projects, and contact information.</p>
+                    <a href="https://github.com/abrar2030/Buildcon-Website" class="view-project">View Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="certifications" id="certifications">
+    <div class="container">
+        <div class="portfolio-heading">
+            <h2 class="section-title">Certifications</h2>
+            <p>Professional credentials validating technical expertise</p>
+        </div>
+        <div class="certifications-grid">
+            <div class="certification-item">
+                <h3 class="certification-title">SQL (Advanced) - HackerRank</h3>
+                <div class="certification-date">Nov 13, 2024</div>
+                <a href="https://www.hackerrank.com/certificates/iframe/bfd758408ff3" 
+                   target="_blank" 
+                   class="certification-link">
+                    View Credential
+                </a>
+            </div>
+
+            <div class="certification-item">
+                <h3 class="certification-title">Software Engineer - HackerRank</h3>
+                <div class="certification-date">Nov 19, 2024</div>
+                <a href="https://www.hackerrank.com/certificates/iframe/407808ada668" 
+                   target="_blank" 
+                   class="certification-link">
+                    View Credential
+                </a>
+            </div>
+
+            <div class="certification-item">
+                <h3 class="certification-title">DevOps in Google Cloud</h3>
+                <div class="certification-date">Jan 09, 2025</div>
+                <a href="https://www.cloudskillsboost.google/public_profiles/1601f1ee-b805-48be-a523-753d139f53cf/badges/13533180" 
+                   target="_blank" 
+                   class="certification-link">
+                    View Credential
+                </a>
+            </div>
+
+            <div class="certification-item">
+                <h3 class="certification-title">Terraform in Google Cloud</h3>
+                <div class="certification-date">Jan 08, 2025</div>
+                <a href="https://www.credly.com/badges/af1f1708-6284-438e-a618-d1b05e7ca3df" 
+                   target="_blank" 
+                   class="certification-link">
+                    View Credential
+                </a>
+            </div>
+
+            <div class="certification-item">
+                <h3 class="certification-title">Kubernetes in Google Cloud</h3>
+                <div class="certification-date">Jan 10, 2025</div>
+                <a href="https://www.credly.com/badges/638bf94d-f099-4173-b62b-be91bb814092" 
+                   target="_blank" 
+                   class="certification-link">
+                    View Credential
+                </a>
+            </div>
+
+            <div class="certification-item">
+                <h3 class="certification-title">AWS Well-Architected Proficient</h3>
+                <div class="certification-date">Jan 02, 2025</div>
+                <a href="https://www.credly.com/badges/7be07071-23b7-4916-a8a7-51fbdd071ae2" 
+                   target="_blank" 
+                   class="certification-link">
+                    View Credential
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-heading">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Interested in working together? Feel free to contact me.</p>
+        </div>
+        <div class="contact-grid">
+            <!-- Left Column - Contact Info -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>I'm open for freelance projects, full-time positions, and collaboration opportunities. Let's connect!</p>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width="30">
+                    </div>
+                    <div class="contact-details">
+                        <span>Email</span>
+                        <a href="mailto:abrarahmedpei@gmail.com">abrarahmedpei@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/684/684809.png" alt="Location" width="30">
+                    </div>
+                    <div class="contact-details">
+                        <span>Location</span>
+                        <a href="#">Budapest, Hungary</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png" alt="Phone" width="30">
+                    </div>
+                    <div class="contact-details">
+                        <span>Phone</span>
+                        <a href="tel:+36202673343">+36202673343</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Contact Form -->
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your message..." required></textarea>
+                    </div>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">Abrar Ahmed</div>
+                <p class="footer-description">Software Developer with expertise in cloud computing, DevOps, and software development.</p>
+                
+                <h3 class="footer-heading">Connect with me:</h3>
+                <div class="social-links">
+                    <a href="https://twitter.com/abrar2o3o" target="_blank">
+                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="Twitter" width="40" height="40">
+                    </a>
+                    <a href="https://linkedin.com/in/abrar2030" target="_blank">
+                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" width="40" height="40">
+                    </a>
+                    <a href="https://fb.com/abrar2o3o" target="_blank">
+                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" width="40" height="40">
+                    </a>
+                    <a href="https://instagram.com/abrar2o3o" target="_blank">
+                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" width="40" height="40">
+                    </a>
+                    <a href="https://www.hackerrank.com/abrar2030" target="_blank">
+                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="HackerRank" width="40" height="40">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#about" class="footer-link">About</a></li>
+                    <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+                    <li><a href="#certifications" class="footer-link">Certifications</a></li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Section - Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Abrar Ahmed. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
