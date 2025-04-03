@@ -2,1125 +2,1559 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abrar Ahmed - Professional Portfolio</title>
+    <title>Abrar Ahmed | Cloud and DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <style>
-        .footer-link {
-            color: #9ca3af;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #1f2937;
-        }
-        
-        .footer-bottom p {
-            color: #9ca3af;
-            font-size: 14px;
-            margin: 0;
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --dark: #111827;
+            --light: #f8f9fa;
+            --gray: #6b7280;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .footer-links.certifications li {
-            white-space: nowrap;
-            overflow: visible;
-            text-overflow: clip;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            transition: transform 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-        
-        .footer-links li {
-            list-style-type: none;
-            margin-bottom: 8px;
-            color: #9ca3af;
-            font-size: 16px;
-            position: relative;
-            padding-left: 15px;
-        }
-        
-        .footer-links li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #4b5563;
-        }
-        
-        .footer-heading {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .skill-icon {
-            width: 80px;
-            height: 80px;
-            background-color: #e0e7ff;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-icon i {
-            font-size: 2.5rem;
-            color: #3730a3;
-        }
-
-        .skill-icon:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+                        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: var(--dark);
+            background-color: white;
+            scroll-behavior: smooth;
         }
-        
-        a {
-            text-decoration: none;
-            color: #2563eb;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: #1e40af;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-        
-        /* Container */
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Header */
+
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
-            top: 0;
             z-index: 1000;
         }
-        
-        .header-content {
+
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 1rem 0;
         }
-        
+
         .logo {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #111;
+            color: var(--primary);
+            letter-spacing: -0.5px;
         }
-        
-        /* Navigation */
-        nav ul {
+
+        .nav-links {
             display: flex;
-            list-style: none;
+            gap: 2rem;
         }
-        
-        nav li {
-            margin-left: 30px;
-        }
-        
-        nav a {
-            color: #333;
+
+        .nav-links a {
+            color: var(--dark);
             font-weight: 500;
             position: relative;
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
-        nav a:after {
+
+        .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: #2563eb;
-            transition: width 0.3s ease;
+            background: var(--primary);
+            transition: var(--transition);
         }
-        
-        nav a:hover:after, 
-        nav a.active:after {
+
+        .nav-links a:hover::after {
             width: 100%;
         }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-size: 24px;
-        }
-        
-        /* Hero Section */
+
         .hero {
-            padding: 150px 0 100px;
-            background-color: #f0f4f8;
+            padding: 12rem 0 6rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             text-align: center;
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
+
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
             line-height: 1.2;
-            color: #111;
+            color: var(--dark);
+            font-weight: 700;
         }
-        
+
         .hero p {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 30px;
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
         }
-        
-        /* Download Button Styles */
-        .download-button {
-            display: inline-block;
-            background-color: #2563eb;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .download-button:hover {
-            background-color: #1e40af;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background-color: white;
-        }
-        
-        .about-content {
-            display: flex;
+
+        .button {
+            display: inline-flex;
             align-items: center;
-            gap: 60px;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 25px;
-            color: #111;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: #444;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .skill-tag {
-            background-color: #e0e7ff;
-            color: #3730a3;
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 14px;
+            padding: 0.75rem 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: var(--transition);
+            gap: 0.5rem;
             font-weight: 500;
         }
-        
-        /* Portfolio Section */
-        .portfolio {
-            padding: 100px 0;
-            background-color: #f8f9fa;
+
+        .button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
         }
-        
-        .portfolio-heading {
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            font-weight: 700;
         }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }  
         
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-img {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .experience-column {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .experience-column h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .timeline-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-weight: 500;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            transition: var(--transition);
+            background: rgba(37, 99, 235, 0.05);
+        }
+
+        .skill-item:hover {
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .skill-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .skill-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
-        
-        .portfolio-item {
+
+        .portfolio-card {
             background: white;
-            border-radius: 8px;
+            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
         }
-        
-        .portfolio-item:hover {
+
+        .portfolio-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         }
-        
-        .portfolio-image {
-            height: 240px;
-            background-color: #e5e7eb;
+
+        .portfolio-img {
+            height: 220px;
             overflow: hidden;
+            position: relative;
+            background: #f8fafc;
         }
-        
-        .portfolio-image img {
+
+        .portfolio-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-content {
-            padding: 25px;
-        }
-        
-        .portfolio-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .portfolio-category {
-            color: #6b7280;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-        
-        .portfolio-description {
-            color: #4b5563;
-            margin-bottom: 20px;
-        }
-        
-        .view-project {
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .view-project::after {
-            content: "→";
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-        
-        .view-project:hover::after {
-            transform: translateX(5px);
+            transition: var(--transition);
         }
 
-        /* Certifications Section */
-        .certifications {
-            padding: 100px 0;
-            background-color: white;
+        .portfolio-card:hover .portfolio-img img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .certification-item {
-            padding: 25px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            border: 1px solid #e5e7eb;
+        .certification-card {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
-        .certification-item:hover {
+        .certification-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         }
 
-        .certification-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #111;
-            margin-bottom: 8px;
-        }
-
-        .certification-date {
-            color: #6b7280;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-
-        .certification-link {
-            display: inline-flex;
-            align-items: center;
-            color: #2563eb;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .certification-link::after {
-            content: "→";
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .certification-link:hover::after {
-            transform: translateX(5px);
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background-color: #f0f4f8;
-        }
-        
-        .contact-heading {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 25px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 15px;
-            color: #4b5563;
-        }
-        
-        .contact-method {
+        .certification-badge {
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: var(--primary);
         }
-        
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: #e0e7ff;
+
+              /* New Recommendations Section Styles */
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .recommendation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .recommendation-badge {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
         }
-        
-        .contact-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: #3730a3;
+
+        .recommendation-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
         }
-        
-        .contact-details a {
-            display: block;
-            color: #2563eb;
+
+        .recommendation-position {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .recommendation-text {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            transition: var(--transition);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
             font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-column {
+            margin-bottom: 2rem;
+        }
+
+        .footer-heading {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .footer-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+        
+        .footer-link i {
+            color: var(--primary);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .footer-link .link-hover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .footer-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-link:hover i {
+            color: white;
+        }
+        
+        .footer-link:hover .link-hover {
+            width: 100%;
+        }
+
+                /* Footer Styles */
+        footer {
+            background: linear-gradient(160deg, #111827 0%, #1a2335 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            padding: 4rem 0;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #2563eb, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-description {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+            max-width: 400px;
+            margin-bottom: 2rem;
         }
         
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
         }
         
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: #e0e7ff;
-            border-radius: 50%;
+        .social-icon-wrapper {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
         
-        .social-link:hover {
-            background-color: #c7d2fe;
-        }
-        
-        .social-icon {
-            width: 20px;
-            height: 20px;
-            fill: #3730a3;
-        }
-        
-        /* Contact Form */
-        .contact-form {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #4b5563;
-        }
-        
-        input,
-        textarea {
+        .social-icon-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
+            height: 100%;
+            background: linear-gradient(120deg, 
+                transparent, 
+                rgba(255,255,255,0.2), 
+                transparent);
+            transition: 0.5s;
         }
         
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #2563eb;
+        .social-icon-wrapper:hover::before {
+            left: 100%;
         }
         
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        button[type="submit"] {
-            background-color: #2563eb;
+        .social-icon-wrapper i {
+            font-size: 1.2rem;
             color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease;
         }
         
-        button[type="submit"]:hover {
-            background-color: #1e40af;
+        .social-link:hover .social-icon-wrapper {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
         }
         
-        /* Footer */
-        footer {
-            background-color: #111827;
-            color: #e5e7eb;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .footer-description {
-            margin-bottom: 20px;
-            color: #9ca3af;
-        }
-        
+        /* Quick Links */
         .footer-heading {
-            font-size: 18px;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .footer-heading::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 4px;
+            background: var(--primary);
+            border-radius: 2px;
         }
         
         .footer-links {
-            list-style: none;
+            display: grid;
+            gap: 1rem;
         }
         
-        .footer-links li {
-            margin-bottom: 12px;
+        .footer-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .footer-links a {
-            color: #9ca3af;
-            transition: color 0.3s ease;
+        .link-icon {
+            margin-right: 1rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
         }
         
-        .footer-links a:hover {
-            color: white;
+        .link-text {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
         }
         
+        .footer-link:hover {
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateX(10px);
+        }
+        
+        .footer-link:hover .link-icon {
+            transform: translateX(5px);
+        }
+        
+        /* Footer Bottom */
         .footer-bottom {
+            padding: 2rem 0 1rem;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #1f2937;
-            color: #9ca3af;
-            font-size: 14px;
+            position: relative;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .certifications-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .footer-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 2rem 0;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+        
+        .pulse {
+            animation: pulse 1.5s infinite;
+            color: #ef4444;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
         
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title {
-                font-size: 30px;
-            }
-            
-            .portfolio-grid {
+            .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 3rem;
             }
             
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background-color: white;
-                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-                padding: 20px 0;
+            .footer-link {
+                padding: 0.5rem;
             }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
-            nav li {
-                margin: 10px 20px;
-            }
-            
-            .hamburger {
-                display: block;
-            }
+        }
 
-            .certifications-grid {
+        @media (max-width: 1024px) {
+            .skills-container {
                 grid-template-columns: 1fr;
             }
         }
-        
-        @media (max-width: 576px) {
-            .footer-content {
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid, .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 4rem 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">Abrar Ahmed</a>
-                <button class="hamburger">☰</button>
-                <nav>
-                    <ul>
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#certifications">Certifications</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+        <nav class="container nav-container">
+            <a href="#" class="logo">Abrar Ahmed</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Work</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <section class="hero" id="home">
+    <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Hello, I'm <span style="color: #2563eb;">Abrar Ahmed</span></h1>
-                <p>Software Developer | Computer Science Graduate</p>
-                <div style="display: flex; gap: 20px; margin-top: 30px; justify-content: center;">
-                    <a href="#contact" class="download-button">Get In Touch</a>
-                </div>
+            <h1>Cloud & DevOps Engineering</h1>
+            <p>Building scalable, secure, and automated cloud solutions</p>
+            <div style="margin-top: 2rem;">
+                <a href="#contact" class="button">
+                    <i class="fas fa-paper-plane"></i>
+                    Connect With Me
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid" style="display: flex; align-items: center; gap: 2rem;">
+          <img src="image.png" alt="Abrar Ahmed" style="width: 450px; height: 450px; object-fit: cover; flex-shrink: 0; margin-left: -50px;">
             <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">About Me</h2>
-                    <p>Welcome to my portfolio! I'm a passionate Cybersecurity and Cloud Specialist with expertise in cloud security, DevSecOps, and cybersecurity engineering. My approach combines technical proficiency with best practices to ensure secure, scalable, and resilient cloud solutions.</p>
-                    <p>I have worked with companies like Ericsson and contributed to academic institutions as a teaching assistant, helping students grasp complex concepts in cybersecurity, cloud computing, and secure systems design. My work is driven by a commitment to innovation, security, and attention to detail.</p>
-                    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 20px;">My Skills</h3>
-                    
-                <div class="skills">
-                    <!-- Programming Languages -->
-                    <div class="skill-icon" title="Java">
-                        <i class="devicon-java-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="Python">
-                        <i class="devicon-python-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="C#">
-                        <i class="devicon-csharp-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="JavaScript">
-                        <i class="devicon-javascript-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="TypeScript">
-                        <i class="devicon-typescript-plain colored"></i>
-                    </div>
-                
-                    <!-- Frontend Frameworks -->
-                    <div class="skill-icon" title="Angular">
-                        <i class="devicon-angularjs-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="React">
-                        <i class="devicon-react-original colored"></i>
-                    </div>
-                
-                    <!-- Backend & Databases -->
-                    <div class="skill-icon" title=".NET">
-                        <i class="devicon-dot-net-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="Oracle">
-                        <i class="devicon-oracle-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="MySQL">
-                        <i class="devicon-mysql-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="PostgreSQL">
-                        <i class="devicon-postgresql-plain colored"></i>
-                    </div>
-                
-                    <!-- Cloud Providers -->
-                    <div class="skill-icon" title="AWS">
-                        <i class="devicon-amazonwebservices-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="GCP">
-                        <i class="devicon-googlecloud-plain colored"></i>
-                    </div>
-                
-                    <!-- Infrastructure Tools -->
-                    <div class="skill-icon" title="Terraform">
-                        <i class="devicon-terraform-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="Ansible">
-                        <i class="devicon-ansible-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="Docker">
-                        <i class="devicon-docker-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="Kubernetes">
-                        <i class="devicon-kubernetes-plain colored"></i>
-                    </div>
-                
-                    <!-- CI/CD -->
-                    <div class="skill-icon" title="Jenkins">
-                        <i class="devicon-jenkins-plain colored"></i>
-                    </div>
-                    <div class="skill-icon" title="GitHub Actions">
-                        <i class="devicon-github-original colored"></i>
-                    </div>
-                
-                    <!-- Version Control -->
-                    <div class="skill-icon" title="Git">
-                        <i class="devicon-git-plain colored"></i>
-                    </div>
+                <p>
+                    I am a motivated Cloud & DevOps Engineer with over a year of hands-on experience in designing, deploying, and automating cloud-native infrastructures. My expertise lies in Kubernetes, CI/CD automation, containerization, and infrastructure-as-code (IaC) using Terraform and Helm. I specialize in streamlining cloud workflows, optimizing deployments, and implementing observability solutions to ensure high availability, security, and performance in modern IT environments. I am now seeking a Junior to Medior Cloud/DevOps Engineer role where I can contribute my skills while further expanding my expertise in cloud automation and scalability.
+                </p>
+                <p>
+                    At Ericsson, I worked extensively with Kubernetes, Docker, Helm, and CI/CD pipelines to develop and optimize cloud-native solutions for scalable application deployments. I automated infrastructure provisioning and application deployment using GitHub Actions, Jenkins, and Helm, significantly reducing manual effort and improving deployment efficiency. My work also involved optimizing Kubernetes cluster performance, enhancing resource management, and strengthening observability using Prometheus and Grafana. Additionally, I contributed to security initiatives by implementing role-based access control (RBAC), network policies, and container security best practices.
+                </p>
+                <p>
+                    Through project-based work, I have gained hands-on experience with AWS, leveraging cloud services to support containerized applications, implement storage solutions, and integrate security measures. I have successfully deployed cloud workloads with AWS EKS and automated infrastructure management using Terraform, ensuring scalability and cost efficiency. My ability to work across different cloud platforms enables me to build flexible, resilient architectures aligned with DevOps best practices.
+                </p>
+                <p>
+                    I enjoy collaborating with teams to adopt cloud-native technologies, improve CI/CD workflows, and implement Kubernetes best practices. I have a strong technical foundation in container orchestration, infrastructure automation, and continuous deployment strategies that enhance software delivery and operational efficiency. My experience in multi-cloud environments allows me to develop scalable and efficient solutions that align with modern DevOps principles.
+                </p>
+                <p>
+                    With a degree in Computer Science from Eötvös Loránd University and real-world experience in cloud automation, I am eager to take on new challenges that push the boundaries of cloud scalability, security, and efficiency. My goal is to drive innovation by enhancing deployment processes, automating workflows, and building resilient cloud infrastructures. I am actively seeking opportunities where I can apply my expertise in Kubernetes, CI/CD, and cloud technologies while continuing to grow in a dynamic DevOps environment.
+                </p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>BSc Computer Science | Eötvös Loránd University</h4>
+                    <span class="date">Sep 2021 – Jan 2025</span>
+                    <p>
+                        <strong>Coursework:</strong> Data Structures and Algorithms, Object-Oriented Programming, Concurrent Programming, Software Engineering, Software Testing, Databases, Operating Systems, Cloud Computing and DevOps, Distributed Systems, Cybersecurity and Network Protocols.
+                    </p>
                 </div>
+                <div class="timeline-item">
+                    <h4>BSc Mathematics | University of Balochistan</h4>
+                    <span class="date">Sep 2018 – Aug 2020</span>
+                    <p>
+                        <strong>Coursework:</strong> Calculus, Linear Algebra, Differential Equations, Real Analysis, Complex Analysis, Abstract Algebra, Probability and Statistics, Numerical Methods, Mathematical Modeling, Optimization Techniques, Physics, Chemistry.
+                    </p>
                 </div>
-                
-            <!-- Updated Image Container -->
-            <div class="about-image" style="max-width: 400px;">
-                <img src="image.png" alt="Abrar Ahmed" style="width: 100%; height: auto; border-radius: 8px;">
             </div>
         </div>
     </section>
 
-<!-- Portfolio Section -->
-<section class="portfolio" id="portfolio">
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Teaching Assistant | Eötvös Loránd University</h4>
+                    <span class="date">Feb 2025 – Present</span>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li>As a Teaching Assistant, I have played a vital role in supporting students in Python, Operating Systems, and Algorithms & Data Structures, helping them grasp fundamental and advanced concepts through hands-on guidance and interactive discussions. I have provided one-on-one and group support to assist students in debugging code, solving complex programming challenges, and developing a deeper understanding of problem-solving techniques. My responsibilities have included conducting tutorials, reviewing assignments, and facilitating practical sessions to reinforce theoretical knowledge with real-world applications. In collaboration with instructors, I have contributed to course delivery by offering technical and academic support, ensuring a seamless learning experience. Beyond coursework, I have actively mentored students, fostering their growth by providing tailored guidance and continuous engagement to enhance their confidence and problem-solving skills. Through my commitment to student success, I have helped create a collaborative learning environment that encourages curiosity, critical thinking, and technical proficiency.</li>
+                        </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Software Developer | Ericsson</h4>
+                    <span class="date">Aug 2023 – Oct 2024</span>
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li>With over a year of experience in DevOps and cloud engineering, I have actively contributed to the development and optimization of cloud-based DevOps pipelines, collaborating closely with cloud architects to enhance deployment efficiency. I have automated cloud deployments using Jenkins, GitHub Actions, and Spinnaker, streamlining CI/CD processes while leveraging Python and Bash scripting to optimize workflows. My expertise in infrastructure as code with Terraform has ensured the scalability and reliability of cloud environments, while Docker and Kubernetes have been integral in containerization and orchestration. I have also focused on monitoring and performance optimization using Prometheus and Grafana, implementing best practices in observability, logging, tracing, and alerting to enhance system reliability. Security and compliance have been a key priority, as I have implemented IAM policies, network security measures, and automated security scans. Additionally, I have contributed to cloud cost optimization strategies, automated provisioning and scaling using Kubernetes operators, and developed RESTful APIs and microservices to support cloud-native application architectures. My experience also includes implementing disaster recovery strategies to ensure business continuity and resilience in cloud-based systems.</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h3 class="section-title">Technical Expertise</h3>
+            <div class="skills-container">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Java">
+                            <i class="devicon-java-plain colored"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item" title="Python">
+                            <i class="devicon-python-plain colored"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item" title="JavaScript">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item" title="TypeScript">
+                            <i class="devicon-typescript-plain colored"></i>
+                            <span>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agile Methodologies -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-users-cog"></i> Agile Methodologies</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Jira">
+                            <i class="devicon-jira-plain colored"></i>
+                            <span>Jira</span>
+                        </div>
+                        <div class="skill-item" title="Confluence">
+                            <i class="devicon-confluence-plain colored"></i>
+                            <span>Confluence</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Frameworks -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-cube"></i> Frameworks</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Spring Framework">
+                            <i class="devicon-spring-plain colored"></i>
+                            <span>Spring Framework</span>
+                        </div>
+                        <div class="skill-item" title=".NET">
+                            <i class="devicon-dot-net-plain colored" style="font-size: 2.2rem;"></i>
+                            <span>.NET</span>
+                        </div>
+                        <div class="skill-item" title="Angular">
+                            <i class="devicon-angularjs-plain colored"></i>
+                            <span>Angular</span>
+                        </div>
+                        <div class="skill-item" title="React">
+                            <i class="devicon-react-plain colored"></i>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Databases -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-database"></i> Databases</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Oracle">
+                            <i class="devicon-oracle-plain colored"></i>
+                            <span>Oracle</span>
+                        </div>
+                        <div class="skill-item" title="MySQL">
+                            <i class="devicon-mysql-plain colored"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item" title="PostgreSQL">
+                            <i class="devicon-postgresql-plain colored"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DevOps & Cloud -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-cloud"></i> DevOps & Cloud</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="AWS">
+                            <i class="devicon-amazonwebservices-plain colored"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="skill-item" title="GCP">
+                            <i class="devicon-googlecloud-plain colored"></i>
+                            <span>GCP</span>
+                        </div>
+                        <div class="skill-item" title="Terraform">
+                            <i class="devicon-terraform-plain colored"></i>
+                            <span>Terraform</span>
+                        </div>
+                        <div class="skill-item" title="Ansible">
+                            <i class="devicon-ansible-plain colored"></i>
+                            <span>Ansible</span>
+                        </div>
+                        <div class="skill-item" title="Docker">
+                            <i class="devicon-docker-plain colored"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item" title="Kubernetes">
+                            <i class="devicon-kubernetes-plain colored"></i>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="skill-item" title="OpenShift">
+                            <i class="devicon-redhat-plain colored"></i>
+                            <span>OpenShift</span>
+                        </div>
+                        <div class="skill-item" title="Grafana">
+                            <i class="devicon-grafana-plain colored"></i>
+                            <span>Grafana</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- CI/CD -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-rocket"></i> CI/CD & GitOps</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Jenkins">
+                            <i class="devicon-jenkins-plain colored"></i>
+                            <span>Jenkins</span>
+                        </div>
+                        <div class="skill-item" title="GitLab CI">
+                            <i class="devicon-gitlab-plain colored"></i>
+                            <span>GitLab CI</span>
+                        </div>
+                        <div class="skill-item" title="CircleCI">
+                            <i class="devicon-circleci-plain colored"></i>
+                            <span>CircleCI</span>
+                        </div>
+                        <div class="skill-item" title="GitHub Actions">
+                            <i class="fab fa-github" style="color: #2088FF;"></i>
+                            <span>GitHub Actions</span>
+                        </div>
+                        <div class="skill-item" title="Travis CI">
+                            <i class="devicon-travis-plain colored"></i>
+                            <span>Travis CI</span>
+                        </div>
+                        <div class="skill-item" title="Spinnaker">
+                            <i class="fas fa-ship"></i>
+                            <span>Spinnaker</span>
+                        </div>
+                        <div class="skill-item" title="Argo CD">
+                            <i class="fas fa-anchor"></i>
+                            <span>Argo CD</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Scripting -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-terminal"></i> Scripting</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Bash">
+                            <i class="devicon-bash-plain colored"></i>
+                            <span>Bash</span>
+                        </div>
+                        <div class="skill-item" title="Shell">
+                            <i class="fas fa-terminal"></i>
+                            <span>Shell Scripting</span>
+                        </div>
+                        <div class="skill-item" title="Automation">
+                            <i class="fas fa-robot"></i>
+                            <span>Automation Tools</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testing -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-check-circle"></i> Testing</h4>
+                    <div class="skills-grid">
+                        <div class="skill-item" title="Unit Testing">
+                            <i class="fas fa-check-double"></i>
+                            <span>Unit Testing</span>
+                        </div>
+                        <div class="skill-item" title="Integration Testing">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Integration Testing</span>
+                        </div>
+                        <div class="skill-item" title="TDD">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>TDD</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="portfolio-grid">
+                <!-- Original Projects -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="paynext.bmp" alt="PayNext">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>PayNext Payment System</h3>
+                        <div class="tech-stack">
+                        <!-- Add tech tags here if available -->
+                        </div>
+                        <p>High-frequency trading platform with real-time risk analytics</p>
+                        <a href="https://github.com/abrar2030/PayNext" class="button" style="margin-top: 1rem;">
+                            <i class="fab fa-github"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="finovabank.jpg" alt="FinovaBank">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>FinovaBank Platform</h3>
+                        <div class="tech-stack">
+                        <!-- Add tech tags here if available -->
+                        </div>
+                        <p>AI-powered fraud detection system for banking transactions</p>
+                        <a href="https://github.com/abrar2030/FinovaBank" class="button" style="margin-top: 1rem;">
+                            <i class="fab fa-github"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- New Projects Added with Original Structure -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="codecinema.webp" alt="CodeCinema">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>CodeCinema</h3>
+                        <div class="tech-stack">
+                            <!-- Add tech tags here if available -->
+                        </div>
+                        <p>Feature-rich movie application with seamless streaming and API integration</p>
+                        <a href="https://github.com/abrar2030/CodeCinema" class="button" style="margin-top: 1rem;">
+                            <i class="fab fa-github"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="readify.jpg" alt="Readify Platform">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Readify E-Learning Platform</h3>
+                        <div class="tech-stack">
+                            <!-- Add tech tags here if available -->
+                        </div>
+                        <p>Comprehensive education solution built with .NET Core and Angular</p>
+                        <a href="https://github.com/abrar2030/Readify" class="button" style="margin-top: 1rem;">
+                            <i class="fab fa-github"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="city-builder-game.jpg" alt="City Builder Game">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>City Builder Game</h3>
+                        <div class="tech-stack">
+                            <!-- Add tech tags here if available -->
+                        </div>
+                        <p>Urban development simulation game with dynamic management systems</p>
+                        <a href="https://github.com/abrar2030/City-Builder-Game" class="button" style="margin-top: 1rem;">
+                            <i class="fab fa-github"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="portfolio-card">
+                    <div class="portfolio-img">
+                        <img src="buildcon-website.jpg" alt="Buildcon Construction Website">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Buildcon Construction</h3>
+                        <div class="tech-stack">
+                            <!-- Add tech tags here if available -->
+                        </div>
+                        <p>Professional construction company website with project showcases</p>
+                        <a href="https://github.com/abrar2030/Buildcon-Website" class="button" style="margin-top: 1rem;">
+                            <i class="fab fa-github"></i>
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<section id="certifications" class="section">
     <div class="container">
-        <div class="portfolio-heading">
-            <h2 class="section-title">My Portfolio</h2>
-            <p>Here are some of my recent projects and work.</p>
-        </div>
-        <div class="portfolio-grid">
-            <!-- PayNext Project -->
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="paynext.bmp" alt="PayNext Payment System">
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">PayNext</h3>
-                    <div class="portfolio-category">FinTech Payment Processing</div>
-                    <p class="portfolio-description">Developed a scalable payment processing application using microservices architecture, containerization, and automated CI/CD pipelines.</p>
-                    <a href="https://github.com/abrar2030/PayNext" class="view-project">View Project</a>
-                </div>
-            </div>
-
-            <!-- FinovaBank Project -->
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="finovabank.jpg" alt="FinovaBank Platform">
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">FinovaBank</h3>
-                    <div class="portfolio-category">Digital Banking Platform</div>
-                    <p class="portfolio-description">Built a secure banking platform with responsive frontend, efficient data handling, and real-time monitoring.</p>
-                    <a href="https://github.com/abrar2030/FinovaBank" class="view-project">View Project</a>
-                </div>
-            </div>
-
-            <!-- CodeCinema -->
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="codecinema.webp" alt="CodeCinema">
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">CodeCinema</h3>
-                    <div class="portfolio-category">Entertainment Application</div>
-                    <p class="portfolio-description">A feature-rich movie application that allows users to explore, search, and stream movies seamlessly using modern web technologies and API integration.</p>
-                    <a href="https://github.com/abrar2030/CodeCinema" class="view-project">View Project</a>
-                </div>
-            </div>
-
-            <!-- Readify -->
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="readify.jpg" alt="Readify Platform">
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Readify</h3>
-                    <div class="portfolio-category">E-Learning Platform</div>
-                    <p class="portfolio-description">Comprehensive e-learning platform developed with .NET Core and Angular for modern education solutions.</p>
-                    <a href="https://github.com/abrar2030/Readify" class="view-project">View Project</a>
-                </div>
-            </div>
-
-            <!-- City Builder Game -->
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="city-builder-game.jpg" alt="City Builder Game">
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">City Builder Game</h3>
-                    <div class="portfolio-category">Game Development</div>
-                    <p class="portfolio-description">A city-building simulation game where players can design and manage their own virtual cities.</p>
-                    <a href="https://github.com/abrar2030/City-Builder-Game" class="view-project">View Project</a>
-                </div>
-            </div>
-
-            <!-- Buildcon Website -->
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="buildcon-website.jpg" alt="Buildcon Construction Website">
-                </div>
-                <div class="portfolio-content">
-                    <h3 class="portfolio-title">Buildcon</h3>
-                    <div class="portfolio-category">Construction Website</div>
-                    <p class="portfolio-description">A professional website for a construction company showcasing their services, projects, and contact information.</p>
-                    <a href="https://github.com/abrar2030/Buildcon-Website" class="view-project">View Project</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Certifications Section -->
-<section class="certifications" id="certifications">
-    <div class="container">
-        <div class="portfolio-heading">
-            <h2 class="section-title">Certifications</h2>
-            <p>Professional credentials validating technical expertise</p>
-        </div>
+        <h2 class="section-title">Professional Certifications</h2>
         <div class="certifications-grid">
-            <div class="certification-item">
-                <h3 class="certification-title">SQL (Advanced) - HackerRank</h3>
-                <div class="certification-date">Nov 13, 2024</div>
+            <div class="certification-card">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate fa-2x"></i>
+                </div>
+                <h3>SQL (Advanced) - HackerRank</h3>
+                <p class="date">Nov 13, 2024</p>
                 <a href="https://www.hackerrank.com/certificates/iframe/bfd758408ff3" 
                    target="_blank" 
-                   class="certification-link">
+                   class="button">
+                    <i class="fas fa-external-link-alt"></i>
                     View Credential
                 </a>
             </div>
 
-            <div class="certification-item">
-                <h3 class="certification-title">Junior Cybersecurity Analyst</h3>
-                <div class="certification-date">March 26, 2025</div>
-                <a href="https://www.credly.com/badges/6a5baa4a-1411-43cb-853e-6720e01b5675" 
+            <div class="certification-card">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate fa-2x"></i>
+                </div>
+                <h3>Software Engineer - HackerRank</h3>
+                <p class="date">Nov 19, 2024</p>
+                <a href="https://www.hackerrank.com/certificates/iframe/407808ada668" 
                    target="_blank" 
-                   class="certification-link">
+                   class="button">
+                    <i class="fas fa-external-link-alt"></i>
                     View Credential
                 </a>
             </div>
 
-            <div class="certification-item">
-                <h3 class="certification-title">Cyber Threat Management</h3>
-                <div class="certification-date">March 26, 2025</div>
-                <a href="https://www.credly.com/badges/89be0299-7dc1-44f0-aa2c-d84c5fac2dac" 
+            <div class="certification-card">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate fa-2x"></i>
+                </div>
+                <h3>DevOps in Google Cloud</h3>
+                <p class="date">Jan 09, 2025</p>
+                <a href="https://www.cloudskillsboost.google/public_profiles/1601f1ee-b805-48be-a523-753d139f53cf/badges/13533180" 
                    target="_blank" 
-                   class="certification-link">
+                   class="button">
+                    <i class="fas fa-external-link-alt"></i>
                     View Credential
                 </a>
             </div>
 
-            <div class="certification-item">
-                <h3 class="certification-title">Cybersecurity Fundamentals</h3>
-                <div class="certification-date">March 19, 2025</div>
-                <a href="https://www.credly.com/badges/7cb5a697-be5c-49a7-968c-1852bd7f6345" 
+            <div class="certification-card">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate fa-2x"></i>
+                </div>
+                <h3>Terraform in Google Cloud</h3>
+                <p class="date">Jan 08, 2025</p>
+                <a href="https://www.credly.com/badges/af1f1708-6284-438e-a618-d1b05e7ca3df" 
                    target="_blank" 
-                   class="certification-link">
+                   class="button">
+                    <i class="fas fa-external-link-alt"></i>
                     View Credential
                 </a>
             </div>
 
-            <div class="certification-item">
-                <h3 class="certification-title">Enterprise Security in Practice</h3>
-                <div class="certification-date">March 19, 2025</div>
-                <a href="https://www.credly.com/badges/26c8f355-c6e1-4bf1-a0d9-ed7a90d109a2" 
+            <div class="certification-card">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate fa-2x"></i>
+                </div>
+                <h3>Kubernetes in Google Cloud</h3>
+                <p class="date">Jan 10, 2025</p>
+                <a href="https://www.credly.com/badges/638bf94d-f099-4173-b62b-be91bb814092" 
                    target="_blank" 
-                   class="certification-link">
+                   class="button">
+                    <i class="fas fa-external-link-alt"></i>
                     View Credential
                 </a>
             </div>
 
-            <div class="certification-item">
-                <h3 class="certification-title">Introduction to Cybersecurity</h3>
-                <div class="certification-date">March 26, 2025</div>
-                <a href="https://www.credly.com/badges/045b31e3-9369-4b83-8f6a-dc8532692801" 
+            <div class="certification-card">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate fa-2x"></i>
+                </div>
+                <h3>AWS Well-Architected Proficient</h3>
+                <p class="date">Jan 02, 2025</p>
+                <a href="https://www.credly.com/badges/7be07071-23b7-4916-a8a7-51fbdd071ae2" 
                    target="_blank" 
-                   class="certification-link">
+                   class="button">
+                    <i class="fas fa-external-link-alt"></i>
                     View Credential
                 </a>
             </div>
         </div>
     </div>
 </section>
+        <!-- New Recommendations Section -->
+    <section id="recommendations" class="section">
+        <div class="container">
+            <h2 class="section-title">Recommendations</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <div class="recommendation-badge">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <h3>Arbab Ali</h3>
+                    <p class="recommendation-position">Microservices Developer | Java Spring Boot Developer | 5G Intelligent Automation Platform</p>
+                    <p class="date">March 7, 2024</p>
+                    <p class="recommendation-text">I had the pleasure of working and mentoring Abrar during his Student Developer internship at Ericsson Hungary. His dedication, curiosity, and work ethic were truly impressive. Abrar consistently paid attention to deadlines, asked insightful questions about technology and process, and balanced his internship with university coursework exceptionally well. His attention to detail and willingness to tackle challenges stood out. I believe Abrar has the potential to excel in both software development and management roles and I highly recommend him.</p>
+                </div>
 
-<!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="contact-heading">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>Interested in working together? Feel free to contact me.</p>
+                <div class="recommendation-card">
+                    <div class="recommendation-badge">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <h3>Zoltán Szabó</h3>
+                    <p class="recommendation-position">DevOps | Microservices Developer | Java Spring Boot Developer</p>
+                    <p class="date">February 28, 2024</p>
+                    <p class="recommendation-text">I had the opportunity to work with Abrar at Ericsson and I highly recommend him as a colleague. He consistently demonstrated a remarkable ability to quickly grasp new concepts, coupled with a strong motivation and diligent work ethic. With his dedication and enthusiasm he contributed to the team's daily tasks. It is a pleasure working alongside him.</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-badge">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <h3>Begüm Özyılmaz Korkmaz</h3>
+                    <p class="recommendation-position">Product Owner at Telefonica Germany</p>
+                    <p class="date">February 27, 2024</p>
+                    <p class="recommendation-text">I had the pleasure of working closely with Abrar Ahmed during his time at Ericsson as a Student Software Developer. Abrar showed great initiative in tackling complex problems and consistently delivered high-quality solutions within tight deadlines. His positive attitude and willingness to take on new challenges made him a valuable member of our team. His professionalism, teamwork, and communication skills were exemplary. I highly recommend Abrar to any organization seeking a talented and motivated software developer.</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-badge">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <h3>Danish Adeel</h3>
+                    <p class="recommendation-position">Technologist | Agile Project Manager | Scrum Master</p>
+                    <p class="date">February 27, 2024</p>
+                    <p class="recommendation-text">Abrar is a student developer on my team. Despite being a junior member, his proactive engagement, eagerness to learn, and commitment to delivering quality work have made a valuable impact on our team, reflecting his promising potential in the agile development environment. He has the potential to be a valuable member of any agile team.</p>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-badge">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <h3>Tamás Márk Simon</h3>
+                    <p class="recommendation-position">Senior Developer & Software Architect at Ericsson</p>
+                    <p class="date">February 23, 2024</p>
+                    <p class="recommendation-text">I had the opportunity to work together with Abrar at Ericsson, and I'm pleased to recommend him. Abrar completed the onboarding process quickly and he started taking on challenging tasks very early on. I'm also glad to say that everyone could rely on him as a teammate, he is always available for technical discussions and is up to date on the latest features the team is working on. He'd make an excellent addition to any team.</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
         <div class="contact-grid">
-            <!-- Left Column - Contact Info -->
             <div class="contact-info">
                 <h3>Contact Information</h3>
-                <p>I'm open for freelance projects, full-time positions, and collaboration opportunities. Let's connect!</p>
-                
-                <div class="contact-method">
+                <div class="contact-item">
                     <div class="contact-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width="30">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="contact-details">
-                        <span>Email</span>
-                        <a href="mailto:abrarahmedpei@gmail.com">abrarahmedpei@gmail.com</a>
+                    <div>
+                        <p>abrarahmedpei@gmail.com</p>
+                        <small>Primary Email</small>
                     </div>
                 </div>
-                
-                <div class="contact-method">
+                <div class="contact-item">
                     <div class="contact-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/684/684809.png" alt="Location" width="30">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div class="contact-details">
-                        <span>Location</span>
-                        <a href="#">Budapest, Hungary</a>
+                    <div>
+                        <p>Budapest, Hungary</p>
+                        <small>Location</small>
                     </div>
                 </div>
-                
-                <div class="contact-method">
+                <div class="contact-item">
                     <div class="contact-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png" alt="Phone" width="30">
+                        <i class="fas fa-phone"></i>
                     </div>
-                    <div class="contact-details">
-                        <span>Phone</span>
-                        <a href="tel:+36202673343">+36202673343</a>
+                    <div>
+                        <p>+36202673343</p>
+                        <small>Available 9AM - 5PM CET</small>
                     </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://twitter.com/abrar2o3o" class="social-link" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/abrar2030" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://fb.com/abrar2o3o" class="social-link" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/abrar2o3o" class="social-link" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.hackerrank.com/abrar2030" class="social-link" target="_blank" aria-label="HackerRank">
+                        <i class="fab fa-hackerrank"></i>
+                    </a>
+                    <a href="https://github.com/abrar2030" class="social-link" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
-
-            <!-- Right Column - Contact Form -->
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Your name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="your@email.com" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" placeholder="Subject" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" placeholder="Your message..." required></textarea>
-                    </div>
-                    
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </form>
         </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        <div class="footer-content">
+        <div class="footer-grid">
+            <!-- Left Column -->
             <div class="footer-column">
                 <div class="footer-logo">Abrar Ahmed</div>
-                <p class="footer-description">Software Developer with expertise in cloud computing, DevOps, and software development.</p>
-                
-                <h3 class="footer-heading">Connect with me:</h3>
+                <p class="footer-description">Bridging quantitative finance with cutting-edge technology solutions</p>
                 <div class="social-links">
-                    <a href="https://twitter.com/abrar2o3o" target="_blank">
-                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="Twitter" width="40" height="40">
+                    <a href="https://twitter.com/abrar2o3o" class="social-link" target="_blank" aria-label="Twitter">
+                        <div class="social-icon-wrapper">
+                            <i class="fab fa-twitter"></i>
+                        </div>
                     </a>
-                    <a href="https://linkedin.com/in/abrar2030" target="_blank">
-                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" width="40" height="40">
+                    <a href="https://linkedin.com/in/abrar2030" class="social-link" target="_blank" aria-label="LinkedIn">
+                        <div class="social-icon-wrapper">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
                     </a>
-                    <a href="https://fb.com/abrar2o3o" target="_blank">
-                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" width="40" height="40">
+                    <a href="https://fb.com/abrar2o3o" class="social-link" target="_blank" aria-label="Facebook">
+                        <div class="social-icon-wrapper">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
                     </a>
-                    <a href="https://instagram.com/abrar2o3o" target="_blank">
-                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" width="40" height="40">
+                    <a href="https://instagram.com/abrar2o3o" class="social-link" target="_blank" aria-label="Instagram">
+                        <div class="social-icon-wrapper">
+                            <i class="fab fa-instagram"></i>
+                        </div>
                     </a>
-                    <a href="https://www.hackerrank.com/abrar2030" target="_blank">
-                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="HackerRank" width="40" height="40">
+                    <a href="https://www.hackerrank.com/abrar2030" class="social-link" target="_blank" aria-label="HackerRank">
+                        <div class="social-icon-wrapper">
+                            <i class="fab fa-hackerrank"></i>
+                        </div>
                     </a>
-                    <!-- Added GitHub Link -->
-                    <a href="https://github.com/abrar2030" target="_blank">
-                        <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg" alt="GitHub" width="40" height="40">
+                    <a href="https://github.com/abrar2030" class="social-link" target="_blank" aria-label="GitHub">
+                        <div class="social-icon-wrapper">
+                            <i class="fab fa-github"></i>
+                        </div>
                     </a>
                 </div>
             </div>
 
+            <!-- Quick Links Column -->
             <div class="footer-column">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home" class="footer-link">Home</a></li>
-                    <li><a href="#about" class="footer-link">About</a></li>
-                    <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
-                    <li><a href="#certifications" class="footer-link">Certifications</a></li>
-                    <li><a href="#contact" class="footer-link">Contact</a></li>
-                </ul>
+                <h3 class="footer-heading">Explore</h3>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Home</span>
+                        <span class="link-hover"></span>
+                    </a>
+                    <a href="#about" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">About</span>
+                        <span class="link-hover"></span>
+                    </a>
+                    <a href="#portfolio" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Projects</span>
+                        <span class="link-hover"></span>
+                    </a>
+                    <a href="#certifications" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Certifications</span>
+                        <span class="link-hover"></span>
+                    </a>
+                    <a href="#contact" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Connect</span>
+                        <span class="link-hover"></span>
+                    </a>
+                </div>
             </div>
         </div>
-        <!-- Copyright Section - Bottom -->
+
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p>© 2025 Abrar Ahmed. All rights reserved.</p>
+            <div class="footer-divider"></div>
+            <p>© 2025 Abrar Ahmed. Crafted with <i class="fas fa-heart pulse"></i> in Budapest</p>
         </div>
     </div>
 </footer>
-</body>
-</html>
